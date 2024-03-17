@@ -1,5 +1,18 @@
 // _reset.scss
-// Goal: Remove all browser-default styles to ensure consistency across browsers.
+// Goal: Establish a consistent baseline for styling across all browsers by neutralizing default browser styles. This reset file aims to eliminate common inconsistencies such as margins, paddings, and default font sizes, providing a clean slate for building out custom styles. By applying a comprehensive set of reset rules, we ensure that elements have a uniform appearance and behavior, reducing cross-browser rendering issues and enhancing the overall design process.
+
+// Details:
+// - Box-sizing is set to border-box globally, making element sizing more predictable by including padding and border in the element's total width and height.
+// - All margins and paddings are removed from elements, preventing unexpected spacing and allowing for explicit spacing control in later styling.
+// - The default font family is set to a generic sans-serif, and basic font properties like size and line height are standardized, creating a consistent text appearance from the start.
+// - List styles are removed to allow for custom list designs without having to override browser defaults.
+// - Anchor tags are stripped of their default underline and color, providing a neutral starting point for link styling.
+// - Border styles on images within anchor tags and the focus outline on elements are removed to prevent default browser styles from interfering with custom designs.
+// - Table borders are collapsed, and spacing is reset, standardizing table appearance.
+// - Elements that have inconsistent display properties across browsers are set to block, ensuring a consistent layout foundation.
+// - Audio and video elements are set to display inline-block to normalize their rendering across browsers.
+
+// Usage: Include this reset file at the beginning of your main stylesheet to apply these foundational styles globally. This approach ensures that all elements start from a common baseline, facilitating more predictable and consistent styling throughout your project.
 
 /* Box sizing rules */
 *,

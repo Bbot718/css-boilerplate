@@ -1,3 +1,17 @@
+// _grid.scss
+// Goal: Implement a flexible and responsive grid system designed to support a wide range of layouts and content types. This system utilizes CSS Grid to provide a robust foundation for designing layouts that need to adapt to different screen sizes, from mobile devices to large desktop screens. The grid is defined with customizable properties, such as the number of columns, gutter sizes, and responsive breakpoints, allowing for precise control over the layout's behavior at various viewport widths.
+//
+// The .grid class establishes the grid container, setting up a default layout that can be modified through nested .cell classes. These cells are designed to span a specific number of columns based on the screen size, ensuring that content reflows appropriately as the viewport changes. The system uses a series of predefined breakpoints to apply responsive styles, dynamically adjusting the layout's structure to provide an optimal viewing experience across all devices.
+//
+// Features:
+// - Customizable grid columns and gutters through SCSS variables.
+// - Responsive design with predefined breakpoints, enabling the grid to adjust to different screen sizes.
+// - Utility classes for cells to span various numbers of columns, offering flexibility in layout composition.
+// - Min-content row heights to ensure that rows adjust to their content, enhancing the grid's adaptability.
+//
+// Usage: Apply the .grid class to a container element to initiate the grid system. Use the .cell class on child elements, specifying the number of columns they should span at different breakpoints for responsive behavior. This setup supports a diverse range of layout patterns, from simple card layouts to complex compositions, making it a versatile tool for web development projects.
+
+
 .grid {
     display: grid;
     width: 100%;

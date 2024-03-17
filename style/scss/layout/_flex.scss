@@ -1,0 +1,66 @@
+// _flex.scss
+// Goal: Provide a robust and modular flexbox utility system to quickly apply flexbox properties to elements using class modifiers. This system includes configurations for flex direction, wrapping behavior, content justification, item alignment, content alignment, and dynamic gap spacing, enabling rapid layout designs directly within HTML markup.
+
+// Details:
+// - The base `.flex` class establishes a flex container with default behavior.
+// - Flex Direction Modifiers: Allow for easy switching between row, column, and their reverse layouts.
+// - Flex Wrap Modifiers: Control the wrap behavior of flex items within the container.
+// - Justify Content Modifiers: Adjust the distribution of flex items along the main axis.
+// - Align Items Modifiers: Align flex items along the cross axis for the current line.
+// - Align Content Modifiers: Align flex lines within the flex container when there is extra space on the cross axis.
+// - Gap Modifiers: Utilize a series of predefined gap sizes to quickly adjust spacing between flex items, enhancing layout flexibility without additional CSS.
+
+// The `.flex-grow` class is a utility for setting flex-grow property to 1, allowing the element to expand to fill available space within its flex container.
+
+// Usage: Apply the `.flex` class to a container element to initiate a flexbox layout. Then, add any combination of the provided modifiers directly to the `.flex` container to achieve the desired layout. The `.flex-grow` class can be applied to flex items within a container to control their growing behavior.
+
+
+.flex {
+    display: flex;
+    
+    /* Flex Direction */
+    &.row { flex-direction: row; }
+    &.row-reverse { flex-direction: row-reverse; }
+    &.column { flex-direction: column; }
+    &.column-reverse { flex-direction: column-reverse; }
+  
+    /* Flex Wrap */
+    &.wrap { flex-wrap: wrap; }
+    &.nowrap { flex-wrap: nowrap; }
+    &.wrap-reverse { flex-wrap: wrap-reverse; }
+  
+    /* Justify Content */
+    &.flex-start { justify-content: flex-start; }
+    &.flex-end { justify-content: flex-end !important; }
+    &.center { justify-content: center; }
+    &.space-between { justify-content: space-between; }
+    &.space-around { justify-content: space-around; }
+  
+    /* Align Items */
+    &.align-items-start { align-items: flex-start; }
+    &.align-items-end { align-items: flex-end; }
+    &.align-items-center { align-items: center; }
+    &.align-items-baseline { align-items: baseline; }
+    &.align-items-stretch { align-items: stretch; }
+  
+    /* Align Content */
+    &.align-content-start { align-content: flex-start; }
+    &.align-content-end { align-content: flex-end; }
+    &.align-content-center { align-content: center; }
+    &.align-content-space-between { align-content: space-between; }
+    &.align-content-space-around { align-content: space-around; }
+    &.align-content-stretch { align-content: stretch; }
+  
+    $gaps: 4, 8, 12, 16, 24, 36, 48, 64, 92, 128, 256, 512;
+
+    @each $gap in $gaps {
+        &.gap#{$gap} {
+           gap: #{$gap}px;
+
+        }
+    }
+}
+
+.flex-grow{
+  flex-grow: 1;
+}
