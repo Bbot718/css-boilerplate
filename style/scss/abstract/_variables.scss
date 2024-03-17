@@ -1,6 +1,7 @@
 // _variables.scss
 // Goal: Define variables for the 7-1 pattern CSS architecture.
 
+// ------------------------------ Color Variables -----------------------------------
 
 // ------------------------------ Breakpoint Variables ------------------------------
 
@@ -12,10 +13,12 @@ $breakpoints: (
     xl: 1200px
 );
 
-
 // ------------------------------ Grid Variables ------------------------------------
 
 $grid-columns: 12;
 $grid-gutters: 1.8rem;
 
-// ------------------------------ Color Variables -----------------------------------
+// ------------------------------ Wrapper Variables ---------------------------------
+
+$wrapper-max-width: 1600px;
+$wrapper-padding: 1.8rem;

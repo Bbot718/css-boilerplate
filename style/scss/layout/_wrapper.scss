@@ -1,0 +1,10 @@
+.wrapper {
+    box-sizing: border-box;
+    max-width: $wrapper-max-width; 
+    padding: 0 $wrapper-padding;
+
+    &.centered {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

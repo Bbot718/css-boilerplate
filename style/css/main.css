@@ -417,4 +417,14 @@ video {
   }
 }
 
+.wrapper {
+  box-sizing: border-box;
+  max-width: 1600px;
+  padding: 0 1.8rem;
+}
+.wrapper.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*# sourceMappingURL=main.css.map */
