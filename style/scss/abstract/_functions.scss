@@ -1,0 +1,16 @@
+@use "sass:map";
+
+// Helper function to get the next breakpoint's value for max-width calculation
+@function next-breakpoint-value($current-breakpoint) {
+
+    $breakpoints-list: map.keys($breakpoints);
+    $current-index: index($breakpoints-list, $current-breakpoint);
+    $next-index: $current-index + 1;
+
+    @if $next-index <=length($breakpoints-list) {
+        $next-breakpoint: nth($breakpoints-list, $next-index);
+        @return map.get($breakpoints, $next-breakpoint);
+    }
+
+    @return null;
+}

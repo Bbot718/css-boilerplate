@@ -1,0 +1,53 @@
+.grid {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    grid-gap: $grid-gutters;
+    grid-template-columns: repeat($grid-columns, 1fr);
+    grid-auto-rows: min-content; // Grid row height set to minimum content
+
+    .cell {
+        box-sizing: border-box;
+        position: relative;
+    
+    }
+
+    // Iterate through each breakpoint and create media queries
+    @each $breakpoint, $value in $breakpoints {
+        $next-value: next-breakpoint-value($breakpoint);
+
+        // For 'xs', apply styles as the base case, without media query
+        @if $breakpoint == xs {
+            @for $i from 1 through $grid-columns {
+                .cell.#{$breakpoint}#{$i} {
+                    grid-column: span #{$i};
+                }
+            }
+        }
+
+        @else if $next-value != null {
+
+            // Use min-width for current breakpoint, and max-width for the next (if available)
+            @media (min-width: $value) and (max-width: #{($next-value - 1)}) {
+                @for $i from 1 through $grid-columns {
+                    .cell.#{$breakpoint}#{$i} {
+                        grid-column: span #{$i};
+                    }
+                }
+            }
+        }
+
+        @else {
+
+            // For the last breakpoint, apply min-width without a max-width limit
+            @media (min-width: $value) {
+                @for $i from 1 through $grid-columns {
+                    .cell.#{$breakpoint}#{$i} {
+                        grid-column: span #{$i};
+                    }
+                }
+            }
+        }
+    }
+}
+
