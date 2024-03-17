@@ -1,0 +1,66 @@
+// Reset.scss
+// Goal: Remove all browser-default styles to ensure consistency across browsers.
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; // This ensures that padding and border sizes are included in the total width and height of elements.
+}
+
+/* Remove default padding and margin */
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+figure, figcaption,
+blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set basic font styles */
+body {
+    font-family: sans-serif; // Specifies a generic sans-serif font family.
+    font-size: 1rem; // Sets the font size to a reasonable default.
+    line-height: 1.6; // Sets a default line height to improve readability.
+    color: #333; // Default text color, chosen for readability against a white background.
+}
+
+/* Remove list styles */
+ul,
+ol {
+    list-style: none; // Removes default list item bullets or numbers.
+}
+
+/* Set up links */
+a {
+    text-decoration: none; // Removes the default underline from links.
+    color: inherit; // Ensures links use the current text color.
+}
+
+/* Remove border on images that are inside of <a> elements in IE 10- */
+img {
+    border-style: none;
+}
+
+/* Remove the outline on focused links when they are clicked in Firefox */
+*:focus {
+    outline: none;
+}
+
+/* Remove default table styles */
+table {
+    border-collapse: collapse; // Collapses table borders into a single border.
+    border-spacing: 0; // Removes the default spacing around cells in tables.
+}
+
+/* Make sure elements are displayed consistently across browsers */
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+
+/* Correct sizing of audio and video elements in all browsers */
+audio,
+video {
+    display: inline-block;
+}

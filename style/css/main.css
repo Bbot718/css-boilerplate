@@ -1,5 +1,65 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding and margin */
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, li,
+figure, figcaption,
+blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set basic font styles */
+body {
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set up links */
 a {
-  background-color: red;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove border on images that are inside of <a> elements in IE 10- */
+img {
+  border-style: none;
+}
+
+/* Remove the outline on focused links when they are clicked in Firefox */
+*:focus {
+  outline: none;
+}
+
+/* Remove default table styles */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Make sure elements are displayed consistently across browsers */
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* Correct sizing of audio and video elements in all browsers */
+audio,
+video {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=main.css.map */
