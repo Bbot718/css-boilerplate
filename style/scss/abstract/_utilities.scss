@@ -2,7 +2,18 @@
 // Goal: Provide a collection of helper classes and utilities for common, reusable styling patterns.
 // Usage: These utility classes are designed for quick, inline modifications that can be applied directly to HTML elements to adjust appearance, behavior, or layout without the need for custom CSS rules for each case.
 
-// Prevent text selection
+// ------------------------------ Prevent text selection
+
 .no-select {
-    @include prevent-selection;
+  @include prevent-selection;
+}
+
+// ------------------------------ Doesn't display on specific breakpoint size
+
+@each $breakpoint in (sm, md, lg, xl) {
+  .hide-on-#{$breakpoint} {
+    @include responsive(#{$breakpoint}) {
+      display: none;
+    }
   }
+}

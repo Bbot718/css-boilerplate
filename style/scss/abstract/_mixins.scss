@@ -1,9 +1,46 @@
 // _mixins.scss
 // Goal: Provide reusable code blocks for common patterns (e.g., flex container, text truncate).
 
-// Prevents text or element selection across various browsers.
+
+// ------------------------------ Prevents text or element selection across various browsers.
 @mixin prevent-selection {
-    -webkit-user-select: none;  // Safari
-    -ms-user-select: none;  // IE 10 and IE 11
-    user-select: none;  // Standard syntax for modern browsers
+    -webkit-user-select: none; // Safari
+    -ms-user-select: none; // IE 10 and IE 11
+    user-select: none; // Standard syntax for modern browsers
+}
+
+// ------------------------------ Applies responsive styles based on a named breakpoint 
+@mixin responsive($breakpoint-name) {
+    @if map-has-key($breakpoints, $breakpoint-name) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint-name);
+
+        @if $breakpoint-name ==sm {
+            // For mobile, apply styles without min-width
+            @media (max-width: $breakpoint-value) {
+                @content;
+            }
+        }
+        @else {
+            // Find the index of the current breakpoint
+            $index: index(map-keys($breakpoints), $breakpoint-name);
+            // Get the previous breakpoint value if exists
+            $prev-breakpoint-value: if($index > 1, map-get($breakpoints, nth(map-keys($breakpoints), $index - 1)), null);
+
+            // Apply styles with appropriate min and max widths
+            @if $prev-breakpoint-value {
+                @media (min-width: #{$prev-breakpoint-value + 1}) and (max-width: #{$breakpoint-value}) {
+                    @content;
+                }
+            }
+
+            @else {
+                @media (min-width: $breakpoint-value) {
+                    @content;
+                }
+            }
+        }
+    }
+    @else {
+        @warn "No breakpoint defined for `#{$breakpoint-name}`.";
+    }
 }

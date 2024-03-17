@@ -4,6 +4,30 @@
   user-select: none;
 }
 
+@media (max-width: 576px) {
+  .hide-on-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .hide-on-md {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .hide-on-lg {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .hide-on-xl {
+    display: none;
+  }
+}
+
 /* Box sizing rules */
 *,
 *::before,
