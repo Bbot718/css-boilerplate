@@ -3,6 +3,7 @@
 
 
 // ------------------------------ Prevents text or element selection across various browsers.
+
 @mixin prevent-selection {
     -webkit-user-select: none; // Safari
     -ms-user-select: none; // IE 10 and IE 11
@@ -10,37 +11,38 @@
 }
 
 // ------------------------------ Applies responsive styles based on a named breakpoint 
+
 @mixin responsive($breakpoint-name) {
     @if map-has-key($breakpoints, $breakpoint-name) {
-        $breakpoint-value: map-get($breakpoints, $breakpoint-name);
-
-        @if $breakpoint-name ==sm {
-            // For mobile, apply styles without min-width
-            @media (max-width: $breakpoint-value) {
-                @content;
-            }
+      $breakpoint-value: map-get($breakpoints, $breakpoint-name);
+      
+      // Check if the breakpoint is 'xl' to apply styles for all values above 1200px
+      @if $breakpoint-name == xl {
+        @media (min-width: $breakpoint-value) {
+          @content;
         }
+      } 
+      @else {
+        // Find the index of the current breakpoint
+        $index: index(map-keys($breakpoints), $breakpoint-name);
+        // Determine the next breakpoint, if exists
+        $next-breakpoint-name: if($index < length(map-keys($breakpoints)), nth(map-keys($breakpoints), $index + 1), null);
+        $next-breakpoint-value: if($next-breakpoint-name, map-get($breakpoints, $next-breakpoint-name), null);
+        
+        // Apply styles within the range from the current breakpoint to the next, if available
+        @if $next-breakpoint-value {
+          @media (min-width: $breakpoint-value) and (max-width: $next-breakpoint-value - 1) {
+            @content;
+          }
+        } 
         @else {
-            // Find the index of the current breakpoint
-            $index: index(map-keys($breakpoints), $breakpoint-name);
-            // Get the previous breakpoint value if exists
-            $prev-breakpoint-value: if($index > 1, map-get($breakpoints, nth(map-keys($breakpoints), $index - 1)), null);
-
-            // Apply styles with appropriate min and max widths
-            @if $prev-breakpoint-value {
-                @media (min-width: #{$prev-breakpoint-value + 1}) and (max-width: #{$breakpoint-value}) {
-                    @content;
-                }
-            }
-
-            @else {
-                @media (min-width: $breakpoint-value) {
-                    @content;
-                }
-            }
+          @media (min-width: $breakpoint-value) {
+            @content;
+          }
         }
-    }
+      }
+    } 
     @else {
-        @warn "No breakpoint defined for `#{$breakpoint-name}`.";
+      @warn "No breakpoint defined for `#{$breakpoint-name}`.";
     }
-}
+  }

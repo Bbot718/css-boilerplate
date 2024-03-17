@@ -10,9 +10,9 @@
 
 // ------------------------------ Doesn't display on specific breakpoint size
 
-@each $breakpoint in (sm, md, lg, xl) {
+@each $breakpoint, $value in $breakpoints {
   .hide-on-#{$breakpoint} {
-    @include responsive(#{$breakpoint}) {
+    @include responsive($breakpoint) {
       display: none;
     }
   }
