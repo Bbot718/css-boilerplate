@@ -1,0 +1,9 @@
+/*
+Sets the height of the section element to fill the available viewport height,
+taking into account any safe area insets at the top and bottom of the screen.
+*/
+section {
+    &.full-height {
+        height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    }
+}

@@ -1,0 +1,11 @@
+$sizes: 4, 8, 12, 16, 24, 36, 48, 64, 96, 128, 256, 512;
+
+.space {
+    width: 100%;
+
+    @each $size in $sizes {
+        &.s#{$size} {
+            height: #{$size}px;
+        }
+    }
+}

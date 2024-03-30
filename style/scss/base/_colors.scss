@@ -1,0 +1,41 @@
+// _colors.scss
+
+.text-primary {
+    color: $primary-color;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+.text-nav {
+    color: $link-color;
+}
+
+.text-cta {
+    color: $cta-color;
+}
+
+.text-footer {
+    color: $footer-color;
+}
+
+.bg-primary {
+    background-color: $primary-color;
+}
+
+.bg-secondary {
+    background-color: $secondary-color;
+}
+
+.bg-nav {
+    background-color: $link-color;
+}
+
+.bg {
+    background-color: $background-color;
+}
+
+.bg-cta {
+    background-color: $cta-color;
+}

@@ -1,0 +1,109 @@
+
+
+@font-face {
+    font-family: 'EuclidFlex';
+    src:    url(#{$font-location} + 'EuclidFlex-Bold.otf') format('opentype'),
+            url(#{$font-location} + 'EuclidFlex-Bold.woff') format('woff'),
+            url(#{$font-location} + 'EuclidFlex-Bold.woff2') format('woff2'),
+            url(#{$font-location} + 'EuclidFlex-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'EuclidFlex';
+    src:    url(#{$font-location} + 'EuclidFlex-Regular.otf') format('opentype'),
+            url(#{$font-location} + 'EuclidFlex-Regular.woff') format('woff'),
+            url(#{$font-location} + 'EuclidFlex-Regular.woff2') format('woff2'),
+            url(#{$font-location} + 'EuclidFlex-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'EuclidFlex', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: $primary-color;
+
+    @include responsive(xs) { font-size: 2rem }
+    @include responsive(sm) { font-size: 1.4rem }
+    @include responsive(md) { font-size: 1.6rem }
+    @include responsive(lg) { font-size: 1.8rem }
+    @include responsive(xl) { font-size: 2rem }
+}
+
+h2 {
+    font-family: 'EuclidFlex', sans-serif;
+    font-weight: bold;
+    color: $primary-color;
+
+    @include responsive(xs) { font-size: 1.8rem }
+    @include responsive(sm) { font-size: 1.2rem }
+    @include responsive(md) { font-size: 1.4rem }
+    @include responsive(lg) { font-size: 1.6rem }
+    @include responsive(xl) { font-size: 1.8rem }
+}
+
+h3 {
+    font-family: 'EuclidFlex', sans-serif;
+    font-weight: bold;
+    color: $primary-color;
+
+    @include responsive(xs) { font-size: 1.6rem }
+    @include responsive(sm) { font-size: 1rem }
+    @include responsive(md) { font-size: 1.2rem }
+    @include responsive(lg) { font-size: 1.4rem }
+    @include responsive(xl) { font-size: 1.6rem }
+}
+
+p.paragraphe-1, span.paragraphe-1 {
+    font-family: 'EuclidFlex', sans-serif;
+    font-weight: normal;
+    color: $primary-color;
+
+    @include responsive(xs) { font-size: 1.2rem }
+    @include responsive(sm) { font-size: .6rem }
+    @include responsive(md) { font-size: .8rem }
+    @include responsive(lg) { font-size: 1rem }
+    @include responsive(xl) { font-size: 1.2rem }
+}
+
+p.paragraphe-2, span.paragraphe-2 {
+    font-family: 'EuclidFlex', sans-serif;
+    font-weight: normal;
+    color: $primary-color;
+
+    @include responsive(xs) { font-size: 1.2rem }
+    @include responsive(sm) { font-size: .6rem }
+    @include responsive(md) { font-size: .8rem }
+    @include responsive(lg) { font-size: 1rem }
+    @include responsive(xl) { font-size: 1.2rem }
+}
+
+p.paragraphe-3, span.paragraphe-3 {
+    font-family: 'EuclidFlex', sans-serif;
+    font-weight: normal;
+    color: $primary-color;
+
+    @include responsive(xs) { font-size: 1.2rem }
+    @include responsive(sm) { font-size: .6rem }
+    @include responsive(md) { font-size: .8rem }
+    @include responsive(lg) { font-size: 1rem }
+    @include responsive(xl) { font-size: 1.2rem }
+}
+
+a.link {
+    font-family: 'EuclidFlex', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color: $link-color;
+
+    @include responsive(xs) { font-size: 1.2rem }
+    @include responsive(sm) { font-size: .6rem }
+    @include responsive(md) { font-size: .8rem }
+    @include responsive(lg) { font-size: 1rem }
+    @include responsive(xl) { font-size: 1.2rem }
+}

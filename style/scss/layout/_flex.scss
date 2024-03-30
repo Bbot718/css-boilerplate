@@ -51,7 +51,7 @@
     &.align-content-space-around { align-content: space-around; }
     &.align-content-stretch { align-content: stretch; }
   
-    $gaps: 4, 8, 12, 16, 24, 36, 48, 64, 92, 128, 256, 512;
+    $gaps: 4, 8, 12, 16, 24, 36, 48, 64, 96, 128, 256, 512;
 
     @each $gap in $gaps {
         &.gap#{$gap} {

@@ -8,42 +8,47 @@
     <link rel="stylesheet" href="./style/css/main.css">
 </head>
 
-<body>
-    <div class="wrapper centered">
+<body class="bg">
+    <div class="wrapper centered ">
         <header>
-            <h1>Welcome to My Website</h1>
+            <h1 class="text-primary">Welcome to my website</h1>
         </header>
 
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a class="link" href="#">Home</a></li>
+                <li><a class="link" href="#">About</a></li>
+                <li><a class="link" href="#">Contact</a></li>
             </ul>
         </nav>
 
         <main>
-            <span class="hide-on-xs">xs</span>
-            <span class="hide-on-sm">sm</span>
-            <span class="hide-on-md">md</span>
-            <span class="hide-on-lg">lg</span>
-            <span class="hide-on-xl">xl</span>
-
-            <div class="grid" style="width: 100%; background-color: red;">
-                <div class="cell xs1 sm2 md3 lg4 xl6">Item 1</div>
-                <div class="cell xs1 sm2 md3 lg4 xl6">Item 2</div>
+            <div class="grid" style="width: 100%;">
+                <div class="cell xs12 sm12 md6 lg6 xl6">
+                    <span class="paragraphe-1">Item 1</span>
+                </div>
+                <div class="cell xs12 sm12 md6 lg6 xl6">
+                    <div class="flex row wrap space-between align-items-center gap64" style="width: 100%;">
+                        <div class="flex-grow paragraphe-1">
+                            <span class="paragraphe-1">Item 1</span>
+                        </div>
+                        <div class="paragraphe-1">
+                            <span class="paragraphe-1">Item 2</span>
+                        </div>
+                        <div class="paragraphe-1">
+                            <span class="paragraphe-1">Item 3</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="flex row wrap space-between align-items-center gap8"
-                style="width: 100%; background-color: green;">
-                <div class="flex-grow">Item 1</div>
-                <div>Item 2</div>
-                <div>Item 3</div>
-            </div>
+            <div class="space s4"></div>
+
+           
         </main>
 
         <footer>
-            <p>&copy; 2022 My Website. All rights reserved.</p>
+            <p class="paragraphe-2">&copy; 2022 My Website. All rights reserved.</p>
         </footer>
     </div>
 </body>

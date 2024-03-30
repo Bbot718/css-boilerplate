@@ -16,14 +16,13 @@
     display: grid;
     width: 100%;
     margin: 0 auto;
-    grid-gap: $grid-gutters;
+    grid-gap: 0 $grid-gutters ;
     grid-template-columns: repeat($grid-columns, 1fr);
     grid-auto-rows: min-content; // Grid row height set to minimum content
 
     .cell {
         box-sizing: border-box;
         position: relative;
-    
     }
 
     // Iterate through each breakpoint and create media queries
